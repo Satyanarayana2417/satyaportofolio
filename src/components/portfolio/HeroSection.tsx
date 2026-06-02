@@ -79,11 +79,13 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-6 flex flex-wrap items-center gap-2 font-mono text-base font-medium md:text-lg"
+            className="mt-6 flex min-h-[3.5rem] flex-wrap items-center gap-x-2 gap-y-1 font-mono text-base font-medium md:min-h-0 md:text-lg"
           >
             <Sparkles className="h-4 w-4 text-warm" />
             <span className="text-muted-foreground">I'm a</span>
-            <Typewriter words={profile.roles} />
+            <span className="block w-full md:inline md:w-auto">
+              <Typewriter words={profile.roles} />
+            </span>
           </motion.div>
 
           <motion.p
