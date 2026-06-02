@@ -4,6 +4,7 @@ import { ArrowUpRight, ExternalLink, Star, X, Github, ChevronLeft, ChevronRight 
 import { projects as staticProjects, type Project } from "@/data/portfolio";
 import { useFirestoreProjects, type FirestoreProject } from "@/hooks/useFirestoreProjects";
 import { SectionHeader } from "./SectionHeader";
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 
 const CATS = ["All", "Web App", "AI/ML", "Mobile", "E-commerce"] as const;
 
@@ -13,6 +14,7 @@ export function ProjectsSection() {
   const [cat, setCat] = useState<(typeof CATS)[number]>("All");
   const [open, setOpen] = useState<AnyProject | null>(null);
   const [mediaIdx, setMediaIdx] = useState(0);
+  useBodyScrollLock(!!open);
 
   const { projects: fsProjects } = useFirestoreProjects();
 

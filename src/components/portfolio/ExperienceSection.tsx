@@ -1,4 +1,5 @@
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock";
 import { Briefcase, X, Calendar, MapPin } from "lucide-react";
 import { useRef, useState } from "react";
 import { experience } from "@/data/portfolio";
@@ -143,6 +144,7 @@ function TimelineItem({
 }
 
 function ExperienceModal({ item: e, onClose }: { item: Exp; onClose: () => void }) {
+  useBodyScrollLock(true);
   return (
     <motion.div
       initial={{ opacity: 0 }}
