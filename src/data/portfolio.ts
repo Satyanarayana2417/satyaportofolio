@@ -1,6 +1,5 @@
-import profileAsset from "@/assets/profile.jpg.asset.json";
-import resumeAsset from "@/assets/satya-resume.pdf.asset.json";
-
+import profileImage from "../assets/profile.jpeg";
+import resumePdf from "../assets/resume.pdf";
 export const profile = {
   name: "Satyanarayana Chodisetti",
   firstName: "Satyanarayana",
@@ -15,8 +14,8 @@ export const profile = {
     "I design and develop modern web applications with a focus on full-stack development and Generative AI. I love learning new technologies and applying them through hands-on projects.",
   heroSubtext:
     "I craft fast, intelligent and beautifully engineered products — blending modern web stacks with Generative AI to ship experiences that feel inevitable.",
-  profileImageUrl: profileAsset.url,
-  resumeUrl: resumeAsset.url,
+ profileImageUrl: profileImage,
+ resumeUrl: resumePdf,
   email: "snsnarayanac@gmail.com",
   phone: "+91 9121055512",
   linkedin: "https://www.linkedin.com/in/satyanarayanach2417",
