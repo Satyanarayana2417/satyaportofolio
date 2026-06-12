@@ -1,4 +1,3 @@
 {
-  "framework": "tanstack-start",
-  "packageManager": "bun@latest"
+  "framework": "tanstack-start"
 }
