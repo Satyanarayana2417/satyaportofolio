@@ -1,6 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "@tanstack/react-router";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { useSiteProfile } from "@/hooks/useSiteProfile";
 
@@ -71,13 +70,13 @@ export function NavBar() {
             scrolled ? "glass shadow-[var(--shadow-soft)]" : "bg-transparent border-transparent"
           }`}
         >
-          <Link to="/" className="group flex items-center gap-2">
+          <button onClick={() => handleNav("home")} className="group flex items-center gap-2 cursor-pointer">
             <span className="font-display text-xl font-bold tracking-tight text-foreground">
               {profile.monogram.split(".")[0]}
               <span className="text-primary">.</span>
               {profile.monogram.split(".")[1]}
             </span>
-          </Link>
+          </button>
 
           <ul className="hidden items-center gap-1 md:flex">
             {NAV.map((item) => {

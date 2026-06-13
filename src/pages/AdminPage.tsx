@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   addDoc,
@@ -39,16 +38,6 @@ import {
 import type { FirestoreProject } from "@/hooks/useFirestoreProjects";
 import { useContactMessages, type ContactMessage } from "@/hooks/useContactMessages";
 
-export const Route = createFileRoute("/admin")({
-  head: () => ({
-    meta: [
-      { title: "Admin · Portfolio" },
-      { name: "robots", content: "noindex,nofollow" },
-    ],
-  }),
-  component: AdminPage,
-});
-
 const ADMIN_PASSCODE = "admin123";
 const CATS = ["Web App", "AI/ML", "Mobile", "E-commerce"] as const;
 
@@ -77,7 +66,7 @@ const emptyForm: FormState = {
   media: [],
 };
 
-function AdminPage() {
+export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [pass, setPass] = useState("");
   const [err, setErr] = useState("");
@@ -259,7 +248,7 @@ function TabBtn({
   );
 }
 
-/* ----------------- PROJECTS TAB ----------------- */
+/* PROJECTS TAB */
 
 function ProjectsTab() {
   const [items, setItems] = useState<FirestoreProject[]>([]);
@@ -385,7 +374,7 @@ function ProjectsTab() {
   );
 }
 
-/* ----------------- PROFILE TAB ----------------- */
+/* PROFILE TAB */
 
 type ProfileDoc = {
   profileImageUrl?: string;
@@ -582,7 +571,7 @@ function Card({ title, children, className = "" }: { title: string; children: Re
   );
 }
 
-/* ----------------- MESSAGES TAB ----------------- */
+/* MESSAGES TAB */
 
 function MessagesTab({ messages }: { messages: ContactMessage[] }) {
   const [selected, setSelected] = useState<ContactMessage | null>(null);
@@ -679,7 +668,7 @@ function MessagesTab({ messages }: { messages: ContactMessage[] }) {
   );
 }
 
-/* ----------------- PROJECT MODAL (unchanged) ----------------- */
+/* PROJECT MODAL */
 
 function ProjectFormModal({
   initial,

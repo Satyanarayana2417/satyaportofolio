@@ -68,7 +68,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-5 font-display text-5xl font-bold leading-[0.95] tracking-tight text-foreground sm:text-6xl md:text-[5.5rem]"
+            className="mt-5 max-w-[23rem] break-words font-display text-[3.15rem] font-extrabold leading-[0.95] tracking-tight text-foreground sm:max-w-none sm:text-6xl md:text-[5.5rem]"
           >
             Satya<span className="text-primary">narayana</span>
             <br />
